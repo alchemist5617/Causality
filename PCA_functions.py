@@ -105,7 +105,7 @@ def deseasonalize_NoStd(data,freq=12):
             averages[j,i] = temp[Idx].mean()
             result[Idx] = temp[Idx] - temp[Idx].mean()
         data_deseasonal[:,i] = result
-    return(data_deseasonal)
+    return(data_deseasonal,averages)
 
 def index_finder(loading,col,percent = 0.98):
     values = loading[col].sort_values(ascending = False)
